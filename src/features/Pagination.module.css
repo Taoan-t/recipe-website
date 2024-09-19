@@ -1,0 +1,32 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4.8rem;
+}
+
+.pagination-btn {
+  background-color: #cf711f;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* .pagination-btn:hover {
+  background-color: #0056b3; 
+} */
+
+.pagination-btn:disabled {
+  background-color: #ccc; /* 禁用按钮的背景色 */
+  cursor: not-allowed; /* 禁用时的鼠标样式 */
+}
+
+span {
+  font-size: 16px;
+  margin: 0 10px;
+}

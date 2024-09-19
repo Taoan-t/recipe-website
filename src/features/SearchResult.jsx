@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Pagination from "./Pagination";
 import RecipeItem from "./RecipeItem";
+import styles from "./SearchResult.module.css";
 
 function SearchResult({ recipes }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -17,8 +18,9 @@ function SearchResult({ recipes }) {
   };
 
   return (
-    <div>
-      <ul>
+    <section className="container">
+      <h2 className="heading-3 center-text ">Recipes Found</h2>
+      <ul className={styles["recipe-list"]}>
         {currentRecipes.map((recipe) => (
           <RecipeItem key={recipe.id} recipe={recipe} />
         ))}
@@ -29,7 +31,7 @@ function SearchResult({ recipes }) {
         totalPages={totalPages}
         onPageChange={handlePageChange}
       />
-    </div>
+    </section>
   );
 }
 

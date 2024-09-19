@@ -1,0 +1,33 @@
+.item {
+  position: relative;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+  min-height: 22rem;
+}
+.item-img {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0.5rem;
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #cf711f;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: none;
+}

@@ -1,3 +1,5 @@
+import styles from "./Pagination.module.css";
+
 function Pagination({ currentPage, totalPages, onPageChange }) {
   const handlePrevPage = () => {
     if (currentPage > 1) {
@@ -12,14 +14,22 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
   };
 
   return (
-    <div className="pagination">
-      <button onClick={handlePrevPage} disabled={currentPage === 1}>
-        Previous
+    <div className={styles.pagination}>
+      <button
+        onClick={handlePrevPage}
+        disabled={currentPage === 1}
+        className={styles["pagination-btn"]}
+      >
+        Prev
       </button>
       <span>
         Page {currentPage} of {totalPages}
       </span>
-      <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+      <button
+        onClick={handleNextPage}
+        disabled={currentPage === totalPages}
+        className={styles["pagination-btn"]}
+      >
         Next
       </button>
     </div>
