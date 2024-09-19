@@ -22,8 +22,8 @@
 } */
 
 .pagination-btn:disabled {
-  background-color: #ccc; /* 禁用按钮的背景色 */
-  cursor: not-allowed; /* 禁用时的鼠标样式 */
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 span {

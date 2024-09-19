@@ -33,40 +33,40 @@ const cuisines = [
 
 function SearchFrom({ onSearch }) {
   const [query, setQuery] = useState("");
-  const [selectedCuisines, setSelectedCuisines] = useState([]);
+  const [selectedCuisine, setselectedCuisine] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!query) return;
-    onSearch(query, selectedCuisines);
+    if (!query) {
+      return;
+    }
+    onSearch(query, selectedCuisine);
     setQuery("");
-    setSelectedCuisines("");
+    setselectedCuisine("");
   }
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <span className={styles.description}>
-        Search recipes by ingredients or dish name:
-      </span>
       <div className={styles.content}>
+        <span className={styles.label}>
+          Search recipes by ingredients or dish name:
+        </span>
+
         <input
           className={styles["search-box"]}
           type="text"
           placeholder="Recipe ingredient or name"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          required
         />
 
-        <span className={styles.description}>Search recipes by cuisine:</span>
+        <span className={styles.label}>Filter results by cuisines:</span>
+
         <select
           className={styles["search-box"]}
-          value={selectedCuisines}
-          onChange={(e) =>
-            setSelectedCuisines(
-              Array.from(e.target.selectedOptions, (option) => option.value)
-            )
-          }
-          multiple
+          value={selectedCuisine}
+          onChange={(e) => setselectedCuisine(e.target.value)}
         >
           <option value="">-- Any</option>
           {cuisines.map((cuisinesOption) => (

@@ -1,15 +1,12 @@
 const API_URL = "https://api.spoonacular.com/recipes";
 const API_KEY = "e58505d4951243288a30abf08fed45bb";
 
-export async function getRecipes(query, cuisines = []) {
-  let url = `${API_URL}/complexSearch?query=${query}`;
+export async function getRecipes(query, cuisine = "") {
+  let url = `${API_URL}/complexSearch?query=${query}&number=100`;
 
-  if (cuisines.length > 0) {
-    const cuisinesParam = cuisines.join(",");
-    url += `&cuisine=${cuisinesParam}`;
+  if (cuisine !== "") {
+    url += `&cuisine=${cuisine}`;
   }
-  console.log(cuisines);
-  console.log(url);
 
   const res = await fetch(url, {
     headers: {

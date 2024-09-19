@@ -8,9 +8,19 @@ import img from "../assets/home-3.jpg";
 function Home() {
   const [recipes, setRecipes] = useState([]);
 
-  const handleSearch = async (query, selectedCuisines) => {
-    const result = await getRecipes(query, selectedCuisines);
-    setRecipes(result);
+  const handleSearch = async (query, selectedCuisine) => {
+    const result = await getRecipes(query, selectedCuisine);
+    if (result.length != 0) {
+      setRecipes(result);
+    } else {
+      alert(
+        `No result found for the dish: "${query}" in the "${selectedCuisine}" cuisine category.`
+      );
+    }
+  };
+
+  const handleReSearch = () => {
+    setRecipes([]);
   };
 
   return (
@@ -26,6 +36,13 @@ function Home() {
             Let&apos;s make cooking simple and fun!
           </p>
           <SearchFrom onSearch={handleSearch} />
+          <button
+            className={`${styles["re-search-button"]} button`}
+            onClick={handleReSearch}
+            disabled={recipes.length === 0}
+          >
+            Re-search
+          </button>
         </div>
         <div className={styles["content-right"]}>
           <img src={img} alt="great meal" />

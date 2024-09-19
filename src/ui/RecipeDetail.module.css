@@ -105,3 +105,26 @@
   gap: 1.6rem;
   line-height: 1.2;
 }
+
+/**************************
+  Media Queries CSS
+**************************/
+/* BELOW 1344px */
+@media (max-width: 84em) {
+}
+
+/* BELOW 1200px */
+@media (max-width: 75em) {
+}
+
+/* BELOW 944px */
+@media (max-width: 59em) {
+}
+
+/* BELOW 704px  */
+@media (max-width: 44em) {
+}
+
+/* BELOW 544px */
+@media (max-width: 34em) {
+}

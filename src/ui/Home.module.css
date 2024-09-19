@@ -14,12 +14,87 @@
   margin-bottom: 4.8rem;
 }
 
+.content-left {
+  display: flex;
+  flex-direction: column;
+}
+
 .description {
   font-size: 2rem;
   line-height: 1.6;
-  margin-bottom: 9.8rem;
+  margin-bottom: 4.8rem;
 }
 
 .content-right img {
   width: 100%;
+}
+
+.re-search-button {
+  width: 15.8rem;
+  background-color: #cf711f;
+  color: #fff;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  align-self: start;
+}
+
+.re-search-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/**************************
+  Media Queries CSS
+**************************/
+/* BELOW 1344px */
+@media (max-width: 84em) {
+  .content {
+    max-width: 120rem;
+  }
+  .heading-1 {
+    font-size: 4.4rem;
+  }
+}
+
+/* BELOW 1200px */
+@media (max-width: 75em) {
+  .content {
+    gap: 4.8rem;
+  }
+}
+
+/* BELOW 944px */
+@media (max-width: 59em) {
+  .content {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .content-left {
+    text-align: center;
+  }
+
+  .content-right {
+    text-align: center;
+  }
+
+  .content-right img {
+    width: 60%;
+  }
+}
+
+/* BELOW 544px */
+@media (max-width: 34em) {
+  .home {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+
+  .centent {
+    padding: 0 3.2rem;
+  }
+
+  .content-right img {
+    width: 80%;
+  }
 }
